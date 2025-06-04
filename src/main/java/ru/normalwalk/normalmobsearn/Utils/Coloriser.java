@@ -8,30 +8,33 @@ import java.util.stream.Collectors;
 
 public class Coloriser {
 
+    private static final Pattern HEX_PATTERN = Pattern.compile("#[a-fA-F0-9]{6}");
+
     public static String coloriser(String text) {
-
-        Pattern pattern = Pattern.compile("#[a-fA-F0-9]{6}");
-        Matcher matcher = pattern.matcher(text);
-
+        if (text == null || text.isEmpty()) return text;
+        
+        Matcher matcher = HEX_PATTERN.matcher(text);
+        StringBuffer buffer = new StringBuffer();
+        
         while (matcher.find()) {
-
-            String hexCode = text.substring(matcher.start(), matcher.end());
-            String replaceSharp = hexCode.replace('#', 'x');
-            StringBuilder builder = new StringBuilder();
-
-            replaceSharp.chars().forEach(c -> builder.append("&").append((char) c));
-
-            text = text.replace(hexCode, builder.toString());
-            matcher = pattern.matcher(text);
-
+            String hexCode = matcher.group();
+            StringBuilder replacement = new StringBuilder("&x");
+            
+            for (char c : hexCode.substring(1).toCharArray()) {
+                replacement.append('&').append(c);
+            }
+            
+            matcher.appendReplacement(buffer, replacement.toString());
         }
-
-        return ChatColor.translateAlternateColorCodes('&', text).replace("&", "");
-
+        matcher.appendTail(buffer);
+        
+        String result = ChatColor.translateAlternateColorCodes('&', buffer.toString());
+        return result.replace("&", "");
     }
 
     public static List<String> coloriser(List<String> text) {
-        return text.stream().map(Coloriser::coloriser).collect(Collectors.toList());
+        return text.stream()
+                .map(Coloriser::coloriser)
+                .collect(Collectors.toList());
     }
 }
-
