@@ -10,7 +10,7 @@ public class Colorizer {
 
     private static final Pattern HEX_PATTERN = Pattern.compile("#[a-fA-F0-9]{6}");
 
-    public static String colorizer(String text) {
+    public static String colorize(String text) {
         if (text == null || text.isEmpty()) return text;
         
         Matcher matcher = HEX_PATTERN.matcher(text);
@@ -32,9 +32,9 @@ public class Colorizer {
         return result.replace("&", "");
     }
 
-    public static List<String> colorizer(List<String> text) {
+    public static List<String> colorize(List<String> text) {
         return text.stream()
-                .map(Colorizer::colorizer)
+                .map(Colorizer::colorize)
                 .collect(Collectors.toList());
     }
 }
