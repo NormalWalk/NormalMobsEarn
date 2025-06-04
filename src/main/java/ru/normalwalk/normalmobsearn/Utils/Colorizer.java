@@ -6,11 +6,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class Coloriser {
+public class Colorizer {
 
     private static final Pattern HEX_PATTERN = Pattern.compile("#[a-fA-F0-9]{6}");
 
-    public static String coloriser(String text) {
+    public static String colorizer(String text) {
         if (text == null || text.isEmpty()) return text;
         
         Matcher matcher = HEX_PATTERN.matcher(text);
@@ -32,9 +32,9 @@ public class Coloriser {
         return result.replace("&", "");
     }
 
-    public static List<String> coloriser(List<String> text) {
+    public static List<String> colorizer(List<String> text) {
         return text.stream()
-                .map(Coloriser::coloriser)
+                .map(Colorizer::colorizer)
                 .collect(Collectors.toList());
     }
 }
