@@ -1,0 +1,5 @@
+ru\normalwalk\normalmobsearn\Command\ReloadCommand.class
+ru\normalwalk\normalmobsearn\Utils\VaultUtils.class
+ru\normalwalk\normalmobsearn\Listener\MobKillListener.class
+ru\normalwalk\normalmobsearn\Main.class
+ru\normalwalk\normalmobsearn\Utils\Coloriser.class

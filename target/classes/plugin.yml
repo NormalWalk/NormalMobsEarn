@@ -1,0 +1,10 @@
+name: NormalMobsEarn
+version: '1.0'
+main: ru.normalwalk.normalmobsearn.Main
+api-version: '1.16'
+depend: [Vault]
+authors: [NormalWalk_ | vk.com/normalwalk | t.me/normalwalk]
+description: Плагин на заработок денег за убийство мобов.
+commands:
+  normalmobsearn:
+    permission: "normalmobsearn.reload"
