@@ -9,7 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import ru.normalwalk.normalmobsearn.Main;
-import ru.normalwalk.normalmobsearn.Utils.Coloriser;
+import ru.normalwalk.normalmobsearn.Utils.Colorizer;
 
 import java.util.List;
 import java.util.Map;
@@ -62,7 +62,7 @@ public class MobKillListener implements Listener {
             String actionbar = plugin.getConfig().getString("earn-actionbar")
                     .replace("{earn}", earnString)
                     .replace("{mob}", mobName);
-            sendActionBar(player, Coloriser.coloriser(actionbar));
+            sendActionBar(player, Colorizer.colorizer(actionbar));
         }
 
         if (playSound) {
@@ -75,7 +75,7 @@ public class MobKillListener implements Listener {
         if (plugin.getConfig().isList("earn-message")) {
             List<String> messageList = plugin.getConfig().getStringList("earn-message");
             for (String line : messageList) {
-                player.sendMessage(Coloriser.coloriser(
+                player.sendMessage(Colorizer.colorizer(
                     line.replace("{earn}", earnString)
                          .replace("{mob}", mobName)
                 ));
@@ -84,7 +84,7 @@ public class MobKillListener implements Listener {
             String message = plugin.getConfig().getString("earn-message")
                     .replace("{earn}", earnString)
                     .replace("{mob}", mobName);
-            player.sendMessage(Coloriser.coloriser(message));
+            player.sendMessage(Colorizer.colorizer(message));
         }
     }
 
@@ -127,7 +127,7 @@ public class MobKillListener implements Listener {
             player.spigot().sendMessage(ChatMessageType.ACTION_BAR, 
                     new TextComponent(TextComponent.fromLegacyText(message)));
         } catch (Exception e) {
-            player.sendMessage(Coloriser.coloriser(message));
+            player.sendMessage(Colorizer.colorizer(message));
         }
     }
 
