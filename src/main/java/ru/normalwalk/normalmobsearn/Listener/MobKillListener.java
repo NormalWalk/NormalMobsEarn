@@ -117,6 +117,11 @@ public class MobKillListener implements Listener {
         }
     }
 
+    public static void clearBoosterCache() {
+        BOOSTER_CACHE.clear();
+        lastCacheUpdate = 0; // Forced cache update
+    }
+
     private void sendActionBar(Player player, String message) {
         try {
             player.spigot().sendMessage(ChatMessageType.ACTION_BAR, 
