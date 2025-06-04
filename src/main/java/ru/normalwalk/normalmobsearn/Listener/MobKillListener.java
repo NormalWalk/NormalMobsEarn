@@ -62,7 +62,7 @@ public class MobKillListener implements Listener {
             String actionbar = plugin.getConfig().getString("earn-actionbar")
                     .replace("{earn}", earnString)
                     .replace("{mob}", mobName);
-            sendActionBar(player, Colorizer.colorizer(actionbar));
+            sendActionBar(player, Colorizer.colorize(actionbar));
         }
 
         if (playSound) {
@@ -75,7 +75,7 @@ public class MobKillListener implements Listener {
         if (plugin.getConfig().isList("earn-message")) {
             List<String> messageList = plugin.getConfig().getStringList("earn-message");
             for (String line : messageList) {
-                player.sendMessage(Colorizer.colorizer(
+                player.sendMessage(Colorizer.colorize(
                     line.replace("{earn}", earnString)
                          .replace("{mob}", mobName)
                 ));
@@ -84,7 +84,7 @@ public class MobKillListener implements Listener {
             String message = plugin.getConfig().getString("earn-message")
                     .replace("{earn}", earnString)
                     .replace("{mob}", mobName);
-            player.sendMessage(Colorizer.colorizer(message));
+            player.sendMessage(Colorizer.colorize(message));
         }
     }
 
@@ -127,7 +127,7 @@ public class MobKillListener implements Listener {
             player.spigot().sendMessage(ChatMessageType.ACTION_BAR, 
                     new TextComponent(TextComponent.fromLegacyText(message)));
         } catch (Exception e) {
-            player.sendMessage(Colorizer.colorizer(message));
+            player.sendMessage(Colorizer.colorize(message));
         }
     }
 
