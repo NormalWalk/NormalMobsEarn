@@ -48,253 +48,258 @@ boosters: # нужен плагин Vault для этого
 # Эта категория была сгенерирована нейросетью
 # Если Вы не нашли тут какого нибудь моба
 # Вы можете самостоятельно по аналогии его добавить.
+
+# UPDATE: Можно установить диапазон суммы начисления денег
+# Например: earn: 5-10
+# Будет рандомно даваться от 5 до 10
+# Можно оставить и статично число 10.
 mobs:
   zombie:
     name: "зомби"
-    earn: 10
+    earn: "10"
   skeleton:
     name: "скелета"
-    earn: 5
+    earn: "5"
   creeper:
     name: "крипера"
-    earn: 15
+    earn: "15"
   spider:
     name: "паука"
-    earn: 8
+    earn: "8"
   cave_spider:
     name: "пещерного паука"
-    earn: 12
+    earn: "12"
   enderman:
     name: "эндермена"
-    earn: 20
+    earn: "20"
   witch:
     name: "ведьмы"
-    earn: 18
+    earn: "18"
   slime:
     name: "слизня"
-    earn: 6
+    earn: "6"
   magma_cube:
     name: "магмового куба"
-    earn: 12
+    earn: "12"
   blaze:
     name: "ифрита"
-    earn: 25
+    earn: "25"
   ghast:
     name: "гаста"
-    earn: 30
+    earn: "30"
   zombie_pigman:
     name: "свинозомби"
-    earn: 15
+    earn: "15"
   piglin:
     name: "пиглина"
-    earn: 15
+    earn: "15"
   piglin_brute:
     name: "пиглина-громилы"
-    earn: 35
+    earn: "35"
   zombified_piglin:
     name: "зомбированного пиглина"
-    earn: 15
+    earn: "15"
   hoglin:
     name: "хоглина"
-    earn: 20
+    earn: "20"
   zoglin:
     name: "зоглина"
-    earn: 25
+    earn: "25"
   wither_skeleton:
     name: "скелета-иссушителя"
-    earn: 40
+    earn: "40"
   stray:
     name: "странника"
-    earn: 8
+    earn: "8"
   husk:
     name: "кадавра"
-    earn: 12
+    earn: "12"
   phantom:
     name: "фантома"
-    earn: 22
+    earn: "22"
   drowned:
     name: "утопленника"
-    earn: 18
+    earn: "18"
   guardian:
     name: "стража"
-    earn: 25
+    earn: "25"
   elder_guardian:
     name: "древнего стража"
-    earn: 100
+    earn: "100"
   shulker:
     name: "шалкера"
-    earn: 35
+    earn: "35"
   endermite:
     name: "эндермита"
-    earn: 10
+    earn: "10"
   silverfish:
     name: "чешуйницы"
-    earn: 5
+    earn: "5"
   vindicator:
     name: "поборника"
-    earn: 30
+    earn: "30"
   evoker:
     name: "призывателя"
-    earn: 45
+    earn: "45"
   vex:
     name: "досадителя"
-    earn: 15
+    earn: "15"
   pillager:
     name: "разбойника"
-    earn: 20
+    earn: "20"
   ravager:
     name: "разорителя"
-    earn: 50
+    earn: "50"
   warden:
     name: "хранителя"
-    earn: 200
+    earn: "200"
   wither:
     name: "иссушителя"
-    earn: 500
+    earn: "500"
   ender_dragon:
     name: "дракона Края"
-    earn: 1000
+    earn: "1000"
   iron_golem:
     name: "железного голема"
-    earn: 60
+    earn: "60"
   snow_golem:
     name: "снежного голема"
-    earn: 15
+    earn: "15"
   wolf:
     name: "волка"
-    earn: 12
+    earn: "12"
   polar_bear:
     name: "белого медведя"
-    earn: 25
+    earn: "25"
   llama:
     name: "ламы"
-    earn: 18
+    earn: "18"
   trader_llama:
     name: "торговой ламы"
-    earn: 20
+    earn: "20"
   panda:
     name: "панды"
-    earn: 30
+    earn: "30"
   bee:
     name: "пчелы"
-    earn: 8
+    earn: "8"
   spider_neutral:
     name: "паука"
-    earn: 8
+    earn: "8"
   cave_spider_neutral:
     name: "пещерного паука"
-    earn: 12
+    earn: "12"
   zombie_villager:
     name: "зомби-жителя"
-    earn: 25
+    earn: "25"
   dolphin:
     name: "дельфина"
-    earn: 35
+    earn: "35"
   goat:
     name: "козы"
-    earn: 15
+    earn: "15"
   axolotl:
     name: "аксолотля"
-    earn: 40
+    earn: "40"
   frog:
     name: "лягушки"
-    earn: 12
+    earn: "12"
   allay:
     name: "тихони"
-    earn: 25
+    earn: "25"
   pig:
     name: "свиньи"
-    earn: 8
+    earn: "8"
   cow:
     name: "коровы"
-    earn: 10
+    earn: "10"
   sheep:
     name: "овцы"
-    earn: 8
+    earn: "8"
   chicken:
     name: "курицы"
-    earn: 5
+    earn: "5"
   rabbit:
     name: "кролика"
-    earn: 6
+    earn: "6"
   horse:
     name: "лошади"
-    earn: 20
+    earn: "20"
   donkey:
     name: "осла"
-    earn: 18
+    earn: "18"
   mule:
     name: "мула"
-    earn: 22
+    earn: "22"
   skeleton_horse:
     name: "скелета лошади"
-    earn: 45
+    earn: "45"
   zombie_horse:
     name: "зомби-лошади"
-    earn: 40
+    earn: "40"
   cat:
     name: "кота"
-    earn: 12
+    earn: "12"
   ocelot:
     name: "оцелота"
-    earn: 15
+    earn: "15"
   parrot:
     name: "попугая"
-    earn: 18
+    earn: "18"
   bat:
     name: "летучей мыши"
-    earn: 3
+    earn: "3"
   squid:
     name: "спрута"
-    earn: 8
+    earn: "8"
   glow_squid:
     name: "светящегося спрута"
-    earn: 15
+    earn: "15"
   turtle:
     name: "черепахи"
-    earn: 25
+    earn: "25"
   cod:
     name: "трески"
-    earn: 4
+    earn: "4"
   salmon:
     name: "лосося"
-    earn: 5
+    earn: "5"
   tropical_fish:
     name: "тропической рыбы"
-    earn: 6
+    earn: "6"
   pufferfish:
     name: "рыбы-шара"
-    earn: 8
+    earn: "8"
   mooshroom:
     name: "грибной коровы"
-    earn: 18
+    earn: "18"
   villager:
     name: "жителя"
-    earn: 30
+    earn: "30"
   wandering_trader:
     name: "странствующего торговца"
-    earn: 35
+    earn: "35"
   fox:
     name: "лисы"
-    earn: 15
+    earn: "15"
   strider:
     name: "страйдера"
-    earn: 20
+    earn: "20"
   tadpole:
     name: "головастика"
-    earn: 3
+    earn: "3"
   camel:
     name: "верблюда"
-    earn: 25
+    earn: "25"
   sniffer:
     name: "нюхача"
-    earn: 50
+    earn: "50"
   armadillo:
     name: "броненосца"
-    earn: 18
+    earn: "18"
   bogged:
     name: "болотника"
-    earn: 12
+    earn: "12"
   breeze:
     name: "бриза"
-    earn: 35
+    earn: "35"

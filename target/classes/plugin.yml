@@ -6,5 +6,4 @@ depend: [Vault]
 authors: [NormalWalk_ | vk.com/normalwalk | t.me/normalwalk]
 description: Плагин на заработок денег за убийство мобов.
 commands:
-  normalmobsearn:
-    permission: "normalmobsearn.reload"
+  normalmobsearn: {}

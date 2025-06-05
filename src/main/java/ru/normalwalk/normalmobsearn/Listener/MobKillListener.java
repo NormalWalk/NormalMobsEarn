@@ -8,8 +8,11 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import ru.normalwalk.normalmobsearn.Main;
 import ru.normalwalk.normalmobsearn.Utils.Coloriser;
 import java.util.List;
+import java.util.Random;
 
 public class MobKillListener implements Listener {
+
+    private final Random random = new Random();
 
     @EventHandler
     public void onMobKill(EntityDeathEvent event) {
@@ -20,7 +23,7 @@ public class MobKillListener implements Listener {
         String mobType = event.getEntity().getType().toString().toLowerCase();
         if (!Main.getPlugin().getConfig().contains("mobs." + mobType)) return;
         String mobName = Main.getPlugin().getConfig().getString("mobs." + mobType + ".name");
-        double baseEarn = Main.getPlugin().getConfig().getDouble("mobs." + mobType + ".earn");
+        double baseEarn = getRandomEarn(mobType);
         double booster = getBooster(player);
         double finalEarn = baseEarn * booster;
 
@@ -29,7 +32,12 @@ public class MobKillListener implements Listener {
         }
 
         boolean roundCoins = Main.getPlugin().getConfig().getBoolean("Settings.round-money");
-        String earnString = roundCoins ? String.valueOf((int) finalEarn) : String.valueOf(finalEarn);
+        String earnString;
+        if (roundCoins) {
+            earnString = String.valueOf((int) finalEarn);
+        } else {
+            earnString = String.format("%.2f", finalEarn);
+        }
 
         if (Main.getPlugin().getConfig().getBoolean("Settings.message")) {
             sendMessage(player, earnString, mobName);
@@ -44,6 +52,30 @@ public class MobKillListener implements Listener {
 
         if (Main.getPlugin().getConfig().getBoolean("Settings.sound")) {
             playSound(player);
+        }
+    }
+
+    private double getRandomEarn(String mobType) {
+        String earnValue = Main.getPlugin().getConfig().getString("mobs." + mobType + ".earn");
+
+        if (earnValue.contains("-")) {
+            String[] parts = earnValue.split("-");
+            if (parts.length == 2) {
+                try {
+                    double min = Double.parseDouble(parts[0].trim());
+                    double max = Double.parseDouble(parts[1].trim());
+                    return min + (max - min) * random.nextDouble();
+                } catch (NumberFormatException e) {
+                    Main.getPlugin().getLogger().warning("Неверный формат диапазона для моба " + mobType + ": " + earnValue);
+                    return 0.0;
+                }
+            }
+        }
+
+        try {
+            return Double.parseDouble(earnValue);
+        } catch (NumberFormatException e) {
+            return Main.getPlugin().getConfig().getDouble("mobs." + mobType + ".earn", 0.0);
         }
     }
 
