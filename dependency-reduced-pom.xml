@@ -4,7 +4,7 @@
   <groupId>ru.normalwalk</groupId>
   <artifactId>NormalMobsEarn</artifactId>
   <name>NormalMobsEarn</name>
-  <version>1.0</version>
+  <version>1.1-UPDATE</version>
   <description>Плагин на заработок денег за убийство мобов.</description>
   <build>
     <resources>
